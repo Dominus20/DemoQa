@@ -6,6 +6,7 @@ public class HelperSelect extends HelperBase{
     public HelperSelect(WebDriver wd) {
         super(wd);
     }
+
     public void selectItemWidgets() {
 
         click(By.xpath("//div//h5[text()='Widgets']"));

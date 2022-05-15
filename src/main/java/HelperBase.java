@@ -24,7 +24,7 @@ public class HelperBase {
         wd.findElement(locator).click();
     }
 
-    // 1000ms = 1sec
+
     public void pause( int millis) {
         try {
             Thread.sleep(millis);

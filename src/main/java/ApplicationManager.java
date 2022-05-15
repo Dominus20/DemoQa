@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,11 @@ public class ApplicationManager {
     HelperSelect select;
 
     public void init(){
-        wd = new ChromeDriver();
+        //wd = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("C:/Tools//4.46.1_0");
+        wd = new ChromeDriver(options);
+
         wd.navigate().to("https://demoqa.com/");
 
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -36,10 +41,6 @@ public class ApplicationManager {
 
     private void returnAfterInstalledAdblock() {
         List<String> tabs = new ArrayList<>(wd.getWindowHandles());
-        wd.switchTo().window(tabs.get(1)).close();
         wd.switchTo().window(tabs.get(0));
-
     }
-
-
 }
